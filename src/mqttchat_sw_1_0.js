@@ -55,10 +55,10 @@ var notificationTitle = 'mqttchat';
 
 var notificationOptions = {
     body: 'mqttchat push message.',
-    icon: server_url+'/images/logo-192x192.png',
-    badge: server_url+'/images/badge-72x72.png',
+   /* icon: server_url+'/images/logo-192x192.png',
+    badge: server_url+'/images/badge-72x72.png',*/
     tag: 'mqttchat-notification' ,
-    data:'',
+    data:'',    
     dir:  (lg==='ar')? 'rtl':'ltr'
   };
   
@@ -114,6 +114,8 @@ function build_avatar(avatar_link,gender){
  */
 function build_message(message){
    var msg_render="";
+   notificationOptions.image="";
+   
    switch(parseInt(message.type)){
        case 0 : //message
        msg_render=smileys_render(message.message);    
