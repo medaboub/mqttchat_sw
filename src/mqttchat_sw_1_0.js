@@ -49,11 +49,14 @@ if(['fr','en','ar'].indexOf(lg) === -1){
 
 var lang=languages[lg];
 
+var server_url="https://cluster1.telifoun.com/rest/mqttchat-cloud";
+
 var notificationTitle = 'mqttchat';
+
 var notificationOptions = {
     body: 'mqttchat push message.',
-    icon: '../images/logo-192x192.png',
-    badge: '../images/badge-72x72.png',
+    icon: server_url+'/images/logo-192x192.png',
+    badge: server_url+'/images/badge-72x72.png',
     tag: 'mqttchat-notification' ,
     data:'',
     dir:  (lg==='ar')? 'rtl':'ltr'
@@ -88,8 +91,10 @@ self.addEventListener('push', function(event) {
  * @returns {String}
  */
 function build_avatar(avatar_link,gender){
- var men_avatar = "../images/mqttchat-avatar-men.png";
- var women_avatar= "../images/mqttchat-avatar-women.png";   
+    
+ var men_avatar = server_url+ "/images/mqttchat-avatar-men.png";
+ var women_avatar= server_url+ "/images/mqttchat-avatar-women.png";   
+ 
  if(avatar_link.length === 0 || !avatar_link.trim()){
      if(gender===0){
         return men_avatar;  
