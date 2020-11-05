@@ -113,6 +113,7 @@ function build_avatar(avatar_link,gender){
  * @returns {build_message.msg_render|String}
  */
 function build_message(message){
+    
    var msg_render="";
    notificationOptions.image="";
    
@@ -127,15 +128,15 @@ function build_message(message){
         msg_render=lang[4];
         notificationOptions.image=message.message;      
        break;
-       case  3: //image cam
+       case  4: //image cam
         msg_render=lang[5];
         notificationOptions.image=message.message;
        break;   
-       case 4: //record
-         msg_render=lang[2];
+       case 3: //record
+        msg_render=lang[2];
        break;
        case 5: //visio message
-           msg_render=lang[3];
+        msg_render=lang[3];
        break;
    } 
    return msg_render;
