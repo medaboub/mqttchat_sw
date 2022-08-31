@@ -49,7 +49,7 @@ if(['fr','en','ar'].indexOf(lg) === -1){
 
 var lang=languages[lg];
 
-var server_url="https://cluster1.telifoun.com/rest/mqttchat-cloud";
+var server_url="https://cluster1.telifoun.com/mqttchat-cloud";
 
 var notificationTitle = 'mqttchat';
 
